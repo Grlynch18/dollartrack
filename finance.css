@@ -84,6 +84,8 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .nav-links a {
@@ -303,12 +305,30 @@ footer {
 .auth-footer a:hover {
     text-decoration: underline;
 }
-
-/* === RESPONSIVE STYLES === */
 @media(max-width: 768px) {
-    .nav-links { display: none; } /* Simplistic mobile nav, can be expanded with JS */
+    .nav-links { 
+        display: none; 
+    }
     
-    .hero { padding: 4rem 0; }
+    .nav-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .nav-actions .btn-secondary {
+        margin-right: 0;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-actions .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .hero { 
+        padding: 4rem 0; 
+    }
 
     .hero-image-mockup {
         transform: perspective(1000px) rotateX(0deg);
@@ -316,5 +336,79 @@ footer {
     
     .auth-container {
         padding: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 480px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .logo-highlight {
+        font-size: 1.6rem;
+    }
+    
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .nav-actions .btn-secondary,
+    .nav-actions .btn-primary {
+        flex: 1;
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .mockup-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .auth-container {
+        padding: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media(max-width: 360px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-actions .btn-secondary,
+    .nav-actions .btn-primary {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }

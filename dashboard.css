@@ -210,8 +210,8 @@ header nav {
     display: flex;
     align-items: center;
     gap: 8px;
+    width: 100%;
 }
-
 .btn4:hover {
     background: #007AF6;
     border-color: #007AF6;
@@ -422,14 +422,14 @@ header nav {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(70, 71, 149, 0.3);
 }
-
 .trans-h {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
-
 .a-tra {
     font-size: 1.5rem;
     font-weight: 700;
@@ -442,7 +442,6 @@ header nav {
     background: rgba(70, 71, 149, 0.2);
     border: 1px solid rgba(70, 71, 149, 0.3);
 }
-
 .tran-list {
     background: rgba(17, 18, 63, 0.6);
     display: flex;
@@ -453,6 +452,8 @@ header nav {
     margin: 15px 0;
     border: 1px solid rgba(70, 71, 149, 0.3);
     transition: all 0.3s ease;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .tran-list:hover {
@@ -581,6 +582,7 @@ header nav {
     font-weight: 600;
     color: #EAEBF3;
     white-space: nowrap;
+    min-width: 80px;
 }
 
 .inp-d {
@@ -651,11 +653,17 @@ header nav {
     border-color: #007AF6;
     transform: translateX(-5px);
 }
-
-/* ===== RESPONSIVE ===== */
 @media(max-width: 630px) {
     header {
-        padding: 15px 20px;
+        padding: 12px 15px;
+    }
+    
+    .logo-link {
+        font-size: 1.3rem;
+    }
+    
+    .logo-highlight {
+        font-size: 1.5rem;
     }
     
     .nav-a a {
@@ -666,28 +674,49 @@ header nav {
         display: block;
     }
     
+    .profile-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .profile-avatar i {
+        font-size: 1.7rem;
+    }
+    
+    .set-in {
+        right: 10px;
+        left: 10px;
+        width: auto;
+    }
+    
     .m-device {
-        padding: 20px;
+        padding: 15px 10px;
     }
     
     .dash-t {
         font-size: 1.5rem;
-    }
-}
-
-@media(max-width: 490px) {
-    .b-in, .b-ex {
-        padding: 12px 20px;
-        font-size: 1rem;
+        margin-bottom: 15px;
     }
     
-    .span-d {
-        font-size: 1rem;
+    .currentBal {
+        padding: 18px;
+        margin-bottom: 15px;
     }
     
-    .inp-d {
-        font-size: 0.95rem;
-        padding: 10px;
+    .span-s {
+        font-size: 0.85rem;
+    }
+    
+    .currentBal span:last-child {
+        font-size: 1.5rem;
+    }
+    
+    .currentBal i {
+        font-size: 2rem;
+    }
+    
+    .card-sec {
+        gap: 1rem;
     }
     
     .income-c {
@@ -697,14 +726,173 @@ header nav {
     
     .income-t {
         font-size: 0.9rem;
+        gap: 8px;
     }
     
     .income-t i {
         font-size: 2rem;
     }
     
-    .btn3 {
-        padding: 15px 50px;
+    .trans {
+        padding: 15px;
+        width: 98%;
+    }
+    
+    .trans-h {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .a-tra {
+        font-size: 1.2rem;
+    }
+    
+    .bg-trans {
+        padding: 15px;
+    }
+    
+    .tran-list {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .tran-list i {
+        font-size: 1.5rem;
+    }
+    
+    .amout-r, .amout-g {
+        font-size: 1.1rem;
+    }
+    
+    .add-data {
+        padding: 15px 10px;
+    }
+    
+    .btns1 {
+        max-width: 100%;
+        gap: 10px;
+    }
+    
+    .b-in, .b-ex {
+        padding: 12px 25px;
         font-size: 1rem;
+    }
+    
+    .dash-inp {
+        padding: 20px 15px;
+    }
+    
+    .dollar-inp {
+        gap: 1rem;
+    }
+    
+    .span-d {
+        font-size: 1rem;
+        min-width: 60px;
+    }
+    
+    .inp-d {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+    
+    .btn3 {
+        padding: 14px 60px;
+        font-size: 1.1rem;
+    }
+}
+
+@media(max-width: 490px) {
+    .logo-link {
+        font-size: 1.2rem;
+    }
+    
+    .logo-highlight {
+        font-size: 1.4rem;
+    }
+    
+    .currentBal span:last-child {
+        font-size: 1.3rem;
+    }
+    
+    .currentBal i {
+        font-size: 1.8rem;
+    }
+    
+    .b-in, .b-ex {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .span-d {
+        font-size: 0.9rem;
+        min-width: 50px;
+    }
+    
+    .inp-d {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    .income-c {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .income-t {
+        font-size: 0.85rem;
+    }
+    
+    .income-t i {
+        font-size: 1.8rem;
+    }
+    
+    .btn3 {
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+    
+    .tran-list {
+        padding: 12px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .t-time {
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width: 360px) {
+    .dash-t {
+        font-size: 1.3rem;
+    }
+    
+    .income-c {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .income-t {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+    
+    .income-t i {
+        font-size: 1.5rem;
+    }
+    
+    .btn3 {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+    
+    .dollar-inp {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .span-d {
+        min-width: auto;
     }
 }
