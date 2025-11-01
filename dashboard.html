@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - DollarTrack</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-l">
+          <a href="./finance.html" class="logo-link">
+            <span class="logo-highlight">$</span>DollarTrack
+          </a>
+        </div>
+        <div class="nav-r">
+          <div class="nav-a">
+            <a href="#" id="addpaymentL" class="nav-link">
+              <i class="bi bi-plus-circle"></i> Add Payment
+            </a>
+            <a href="#" class="nav-link">
+              <i class="bi bi-file-earmark-bar-graph"></i> Report
+            </a>
+          </div>
+          <div class="profile-st">
+            <div id="profilePic" class="profile-avatar">
+              <i class="bi bi-person-circle"></i>
+            </div>
+          </div>
+        </div>
+        <div class="set-in">
+          <div class="close-btn">
+            <button id="closeNavBtn" class="btn5">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+           <div class="respo-bt">
+            <div class="bt">
+              <button class="btn4" id="addPaymentMobile">
+                <i class="bi bi-plus-circle"></i> Add Payment
+              </button>
+            </div>
+            <div class="bt">
+              <button class="btn4">
+                <i class="bi bi-file-earmark-bar-graph"></i> Report
+              </button>
+            </div>
+          </div>
+          <div class="bt">
+            <button class="btn4">
+              <i class="bi bi-gear"></i> Setting
+            </button>
+          </div>
+          <div class="bt">
+            <button class="btn4" id="logoutBtn">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Full Transaction Page (Initially Hidden) -->
+    <section class="trans">
+      <div class="trans-h">
+        <div class="dash-mobile" id="dashboardMobileD">
+          <i class="bi bi-arrow-left"></i>
+          <span>Dashboard</span>
+        </div>
+        <span class="a-tra">All Transcations</span>
+      </div>
+      <div class="bg-trans">
+        <div id="fullDisplayTrans">
+            <!-- Full transaction list will be rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Data Form (Initially Hidden) -->
+    <section class="add-data">
+      <div id="addToDash" class="dash-mobile">
+        <i class="bi bi-arrow-left"></i>
+        <span>Dashboard</span>
+      </div>
+      <div class="add-btn">
+        <div class="btns1">
+          <div class="btns-in">
+            <button id="incomeBtn" class="b-in">Income</button>
+          </div>
+          <div class="btns-ex">
+            <button id="expensesBtn"  class="b-ex">Expense</button>
+          </div>
+        </div>
+      </div>
+      <div class="dash-inp">
+        <div class="dash-inp2">
+          <div class="dollar-inp">
+            <span class="span-d">$</span>
+            <input class="inp-d" type="number" name="" id="amount" />
+          </div>
+          <div class="dollar-inp">
+            <span class="span-d">Title</span>
+            <input class="inp-d" type="Text" name="" id="title" />
+          </div>
+          <div class="dollar-inp">
+            <span class="span-d">Category</span>
+            <select class="inp-d d2" name="" id="category">
+              <option class="opt" value="Bills"><span>Bills</span> <i class="bi bi-cash-stack"></i></option>
+              <option value="food">Food</option>
+              <option value="other">Other</option>
+              <option value="salary">Salary</option>
+              <option value="transport">Transport</option>
+              <option value="travel">Travel</option>
+            </select>
+          </div>
+          <div class="dollar-inp">
+            <span class="span-d">Date</span>
+            <input class="inp-d d2" id="date" type="date" />
+          </div>
+        </div>
+      </div>
+      <div class="btns2">
+        <button id="saveBtn" class="btn3">Save</button>
+      </div>
+    </section>
+
+    <!-- Main Dashboard (Initially Visible) -->
+    <section id="mobileDevice" class="m-device">
+      <div class="welcome-section">
+        <div class="dash-t">
+        <span>Welcome Back!</span>
+      </div>
+      </div>
+      <div>
+         <div class="currentBal">
+          <div>
+            <div class="span-s">
+              <span>Current Balance</span>
+            </div>
+            <div>
+              <span id="blanT">$0.00</span>
+            </div>
+          </div>
+          <div>
+            <i class="bi bi-cash"></i>
+          </div>
+        </div>
+         <div class="currentBal">
+          <div>
+            <div class="span-s">
+              <span>Total Income</span>
+            </div>
+            <div class="amount-c-g">
+              <span id="amoutIncome">$0.00</span>
+            </div>
+          </div>
+          <div>
+            <i class="bi bi-coin"></i>
+          </div>
+        </div>
+         <div class="currentBal">
+          <div>
+            <div class="span-s">
+              <span>Total Expense</span>
+            </div>
+            <div class="amount-c-r">
+              <span id="amoutExpenses">$0.00</span>
+            </div>
+          </div>
+          <div>
+            <i class="bi bi-cash-coin"></i>
+          </div>
+        </div>
+      </div>
+      <div class="dash-t action">
+        <span>Action</span>
+       </div>
+      <div class="card-sec">
+        <div id="incomeTrans" class="income-c">
+          <div class="income-t">
+            <div>
+            <i class="bi bi-plus-circle"></i>
+          </div>
+          <div>
+            <span>Income</span>
+          </div>
+          </div>
+        </div>
+        <div id="expenTrans" class="income-c">
+          <div class="income-t">
+            <div>
+           <i class="bi bi-dash-circle"></i>
+          </div>
+          <div>
+            <span>Expense</span>
+          </div>
+          </div>
+        </div>
+        <div id="viewTrans" class="income-c">
+          <div class="income-t">
+            <div>
+            <i class="bi bi-card-list"></i>
+          </div>
+          <div>
+            <span>View Transcations</span>
+          </div>
+          </div>
+        </div>
+        <div class="income-c">
+          <div class="income-t">
+            <div>
+           <i class="bi bi-file-earmark-bar-graph"></i>
+          </div>
+          <div>
+            <span>Report</span>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dash-t">
+        <span>Recent Transactions</span>
+      </div>
+      <div class="bg-trans" id="displayTrans">
+        <!-- The 5 most recent transactions will be dynamically inserted here -->
+      </div>
+      
+    </section>
+  </body>
+  <script src="./dashboard.js" type="module"></script>
+</html>
